@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,13 +6,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Container(child: Text("Flutter App",)),
-      centerTitle: true,
-      ),
-      body: Column(children: <Widget>[
-        Card(child: Text('CHART !'),elevation: 5,)
-        ,Card(child: Text('List of TXT'),)
-      ],)
-    );
+        appBar: AppBar(
+          title: const Text(
+            "Flutter App",
+          ),
+          centerTitle: true,
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:  <Widget>[
+            Card(
+              color: Colors.blue,
+              elevation: 5,
+              child: Container(
+                width: double.infinity,
+                child: Text(
+                  'CHART !',
+                ),
+              ),
+            ),
+            Card(
+              child: Text(
+                'List of TXT',
+              ),
+            )
+          ],
+        ));
   }
 }
