@@ -1,7 +1,24 @@
+
 import 'package:flutter/material.dart';
+import 'package:personal_expense_app/utils/transactions.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final List<Transaction> transaction = [
+    Transaction(
+      id: '1',
+      title: 'Mobile Recharge',
+      amount: 499,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: '2',
+      title: 'New Mobile',
+      amount: 30099,
+      date: DateTime.now(),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -13,22 +30,41 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:  <Widget>[
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
             Card(
               color: Colors.blue,
               elevation: 5,
               child: Container(
                 width: double.infinity,
-                child: Text(
+                child: const Text(
                   'CHART !',
                 ),
               ),
             ),
-            Card(
-              child: Text(
-                'List of TXT',
-              ),
+            Column(
+              children: transaction.map((txn) {
+                return Card(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(20),
+                        child: Text(txn.amount.toString()),
+                        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                      ),
+                      Column(
+                        children: [
+                          Text(txn.title),
+                          Text(txn.date.toString())
+                          
+                        ],
+                      )
+                    ],
+                  ),
+                );
+              }).toList(),
             )
           ],
         ));
