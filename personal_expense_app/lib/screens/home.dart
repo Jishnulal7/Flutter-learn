@@ -51,8 +51,8 @@ class HomePage extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.all(20),
                         padding: const EdgeInsets.all(20),
-                        child: Text(txn.amount.toString()),
                         decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                        child: Text(txn.amount.toString()),
                       ),
                       Column(
                         children: [

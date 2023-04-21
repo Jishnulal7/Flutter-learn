@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import './quiz.dart';
 import 'result.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
+
     return _MyAppState();
   }
 }
@@ -70,7 +72,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My Quiz App'),
+          title: const Text('My Quiz App'),
         ),
         body: _questionIndex < _questions.length
             ? Quiz(
