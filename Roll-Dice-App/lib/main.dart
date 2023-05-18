@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/home.dart';
+import 'package:roll_dice_app/Home.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return    MaterialApp(
+      home: HomeScreen([Color.fromARGB(255, 57, 13, 133),Color.fromARGB(255, 53, 6, 133)]),
       debugShowCheckedModeBanner: false,
     );
   }
